@@ -1,1 +1,13 @@
+arduino-python3==0.6
+Click==7.0
+Flask==1.1.1
+future==0.18.2
 gunicorn==19.10.0
+iso8601==0.1.12
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+pyserial==3.4
+PyYAML==5.3
+serial==0.0.97
+Werkzeug==0.16.1
