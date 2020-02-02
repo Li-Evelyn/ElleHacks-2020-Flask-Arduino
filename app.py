@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import serial
 import time
 
@@ -14,11 +14,20 @@ def change_lock_state(state):
         ser.write(b'L')
 
 @app.route('/')
-def hello_world():
+def home():
+    return "Go to /unlock to unlock your bike and /lock to lock your bike!"
+
+@app.route('/unlock')
+def unlock():
+    time.sleep(0.5)
     change_lock_state("open")
-    time.sleep(2)
-    change_lock_state("")
-    return 'Hello World!'
+    return 'Unlocked!'
+
+@app.route('/lock')
+def lock():
+    time.sleep(0.5)
+    change_lock_state("close")
+    return 'Locked!'
 
 
 if __name__ == '__main__':
